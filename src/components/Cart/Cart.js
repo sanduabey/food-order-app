@@ -1,17 +1,17 @@
-import classes from './Cart.module.css'
-import Modal from '../UI/Modal'
+import classes from './Cart.module.css';
+import Modal from '../UI/Modal';
 
 const Cart = (props) => {
   const cartItems = (
     <ul className={classes['cart-items']}>
       {[
         { id: 'c1', name: 'Sushi', amount: 2, price: 12.99 },
-        { id: 'c2', name: 'Pizza', amount: 3, price: 15.99 },
+        { id: 'c2', name: 'Pizza', amount: 3, price: 2.99 },
       ].map((item) => (
-        <li>{item.name}</li>
+        <li key={item.id}> {item.name} </li>
       ))}
     </ul>
-  )
+  );
 
   return (
     <Modal onClose={props.onClose}>
@@ -27,7 +27,7 @@ const Cart = (props) => {
         <button className={classes.button}>Order</button>
       </div>
     </Modal>
-  )
-}
+  );
+};
 
-export default Cart
+export default Cart;
